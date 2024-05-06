@@ -1,0 +1,21 @@
+ctransformers==0.2.2
+sentence-transformers==2.7.0
+langchain==0.1.16
+langchain-core
+langchain-community
+langchain-pinecone
+langchain-nomic 
+tiktoken 
+langchainhub 
+langgraph 
+tavily-python
+pinecone-client
+huggingface-hub
+flask
+pypdf
+scidownl
+python-dotenv
+
+-e .
+
+
