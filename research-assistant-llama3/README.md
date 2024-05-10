@@ -1,5 +1,9 @@
 # Research Assistant Bot using Local LangGraph RAG & Llama3
 
+This project focuses on building a robust Research Assistant using a combination of Local Retrieval Augmented Generation (RAG) techniques, LangGraph agents and the Llama-3 model.
+
+## Summary
+
 1. [What is RAG?](#what-is-rag)
    - [Problematic](#problematic)
    - [Solution](#solution)
@@ -14,8 +18,6 @@
 6. [Tools and APIs Used](#tools-and-apis-used)
 7. [How to run](#how-to-run)
 8. [Additional resources](#additional-resources)
-
-This project focuses on building a robust Research Assistant using a combination of Local Retrieval Augmented Generation (RAG) techniques, LangGraph agents and the Llama-3 model.
 
 ## What is RAG?
 
