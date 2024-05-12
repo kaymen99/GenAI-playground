@@ -3,8 +3,8 @@ from .agents import RAGAgents
 
 ### Nodes
 class Nodes():
-    def __init__(self, retriever):
-        self.agents = RAGAgents(retriever)
+    def __init__(self, llm, retriever):
+        self.agents = RAGAgents(llm, retriever)
 
     def route_question(self, state):
         """

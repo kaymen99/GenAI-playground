@@ -5,6 +5,7 @@ langchain-core
 langchain-community
 langchain-pinecone
 langchain-nomic 
+langchain-groq
 tiktoken 
 langchainhub 
 langgraph 

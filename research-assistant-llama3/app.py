@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask, render_template, request
+from langchain_groq import ChatGroq
 from langchain_pinecone import PineconeVectorStore
 from src.utils import download_hugging_face_embeddings
 from src.graph import Workflow
@@ -25,8 +26,15 @@ embeddings = download_hugging_face_embeddings("sentence-transformers/all-MiniLM-
 docsearch = PineconeVectorStore.from_existing_index(index_name, embeddings)
 docs_retriever = docsearch.as_retriever()
 
+# load llama3 model with Groq
+llm = ChatGroq(
+        api_key=os.environ.get("GROQ_API_KEY"),
+        model="llama3-70b-8192"
+     )
+
 # Build RAG graph worfklow
-rag_graph = Workflow(docs_retriever).app
+worflow = Workflow(llm, docs_retriever)
+rag_graph = worflow.app
 
 @app.route("/")
 def home():

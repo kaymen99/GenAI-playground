@@ -3,10 +3,10 @@ from .state import GraphState
 from .nodes import Nodes
 
 class Workflow():
-    def __init__(self, docs_retriever):
+    def __init__(self, llm, docs_retriever):
       # initiate graph state & nodes
       workflow = StateGraph(GraphState)
-      nodes = Nodes(docs_retriever)
+      nodes = Nodes(llm, docs_retriever)
 
       # Define nodes
       workflow.add_node("retrieve_documents", nodes.retrieve_documents)
