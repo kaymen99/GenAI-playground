@@ -1,6 +1,8 @@
 # Research Assistant Bot using Local RAG, LangGraph & Llama3
 
-This project focuses on building a robust Research Assistant using a combination of Local Retrieval Augmented Generation (RAG) techniques, LangGraph agents, and the Llama-3 model.
+This project focuses on building a robust Research Assistant using a combination of Local Retrieval Augmented Generation (RAG) techniques, LangGraph agents, and the Llama-3 model on top of Groq.
+
+![Capture d’écran 2024-05-12 à 18 03 15](https://github.com/kaymen99/GenAI-playground/assets/83681204/1298dfdd-dffc-4c0c-9573-e741d66ce0bb)
 
 ## Summary
 
@@ -104,15 +106,11 @@ Let's explore how our local RAG system will operate. After the user asks his que
  
 ## How to run
 
-* To be able to run this project, you must install Ollama on your machine [link](https://ollama.com/download) and then install the Llama3 model locally by running:
-
-```bash
-ollama run llama3
-```
+* We'll be using the Llama3 model 70b parameters for this project, and we'll leverage the Groq API to run it, you must get an API key (it's free) from [link](https://wow.groq.com/)
 
 * We'll be using the Pinecone vector database for our local RAG model, so you'll need to create an account and get an API key (choose the free version) from [here](https://www.pinecone.io/)
 
-* Lastly, you'll need a [Tavily search]() API key which is used by the agents to search the internet
+* Lastly, you'll need a [Tavily search](https://tavily.com/) API key which is used by the agents to search the internet
 
 * Clone the repository:
 
@@ -130,11 +128,12 @@ pip install -r requirements.txt
 * Create a `.env` file in the root directory and add your API keys as follows:
 
 ```ini
+GROQ_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 PINECONE_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 TAVILY_API_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
-* To construct the local data store for the research assistant, you must first download research papers. Don't worry, I already set up the `scripts/downloader.py` script for that you just need to add your research topic and the number of papers to download, then run:
+* To construct the local data store for the research assistant, you must first download research papers. Don't worry, I already set up the `scripts/downloader.py` script for that you just need to add your research topic and the number of papers to download (you can also add your own research papers directly into the `/papers` folder), then run:
 
 ```bash
 python scripts/downloader.py
