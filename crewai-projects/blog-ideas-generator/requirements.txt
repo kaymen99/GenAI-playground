@@ -1,0 +1,6 @@
+crewai 
+langchain 
+langchain_core
+langchain-openai 
+langchain-groq
+bs4
